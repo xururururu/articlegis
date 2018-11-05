@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+  <!-- Your CSS files -->
+  <link rel="stylesheet" href="main.css">
+
+  <!-- google fonts: Roboto Condensed(super-font) and Lora(sub-font) -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
+
+
+
+  <title>Ru's GIS Project</title>
+</head>
+
+<body class="light-theme">
+  <div class="container">
+    <!-- start of the main container-->
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="kicker super-font">Politics and Policy</p>
+        <h1 class="headline super-font">Is surveillance Cameras Implementation Efficient in Distribution and Deterring Crimes?</h1>
+        <p class="credit super-font">BY Ru Xu</p>
+        <p class="date sub-font">Published December 10, 2017</p>
+<p class="body-text sub-font"><strong>(Skills&Tools: ArcGIS)</strong>
+        <p class="body-text sub-font">
+          Prior to the implementation of public surveillance cameras in 2004, Baltimore experienced 11,183 violent crimes and 48,653 total crimes, resulting in the seventh-highest violent crime rate and 28th overall highest crime rate in the United
+          States. Public surveillance cameras offered the opportunity to use technology that could aid in the prevention, detection, and investigation of these crimes.
+
+          <p class="body-text sub-font">In 2005, mayor O’Malley announced the first phase of establishing Baltimore’s CitiWatch program with Department of Homeland Security. Funding with several million dollars, 50 surveillance cameras were
+            installed in downtown and expand year by year. Up to now, there are 603 surveillance cameras covers the city.
+            <p class="body-text sub-font">Surveillance Camera system are mainly have 2 functions:
+
+              <ul class="body-text sub-font">
+                <li>Help to record and track crime activities.</li>
+                <li>Help to deter potential crimes. </li>
+              </ul>
+              <p class="body-text sub-font">The first function is widely accepted and reasonable. For the second function, GIS is a good way to do basic analysis on examine if this program efficient as police officers claimed to be. In addition,
+                with the help of GIS, we can also know if the current distribution of cameras is efficient.
+                <p class="body-text sub-font">I got data from five sources:
+                  <ul class="body-text sub-font">
+                    <li>Surveillance camera’s locations: Excel file downloaded from https://data.baltimorecity.gov/Public-Safety/CCTV-Locations/hdyb-27ak</li>
+                    <li>Baltimore violent crime data with categories and locations: Excel file downloaded from https://www.baltimorepolice.org/crime-stats/crime-map-data-stats</li>
+                    <li>Crime rate of Baltimore Community Statistical Areas: U.S. Census</li>
+                    <li>Shapefiles: Baltimore Community Statistical Area ( CSA ) http://www.bniajfi.org/vital_signs</li>
+                    <li>U.S. Cities & Counties: GIS Tutorial book: UnitedStates.gdb</li>
+                  </ul>
+                </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">Overview of crime and surveillance cameras in Baltimore</p>
+        <p class="body-text sub-font">
+          Public surveillance systems include a network of cameras and components for monitoring, recording, and transmitting video images. These systems are typically equipped with night vision, color recording, and have the ability to pan, tilt,
+          and zoom.
+          <p class="body-text sub-font">
+            Next map is an overview of Baltimore’s crime and surveillance cameras, I use X, Y coordinates to put 602 surveillance cameras on the map and use geocoding technique to put about 2000 crimes happened during Jan 13th - Jan 28th ( there are
+            about 50,000 violent crimes happens in Baltimore a year, if I use data of the whole year, the map will looks messy ) with 98 percent matching on map and symbolize them with various categories of Part 1 crimes.
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+        <p class="label super-font">Baltimore Crime and Surveillance Camera Map</p>
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis2.png" alt="keyphrase">
+        <p class="note sub-font">
+
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">Narrowed Research Area</p>
+        <p class="body-text sub-font">
+          As there are more than 600 surveillance cameras and 2000 crimes on the map, it’s not easy to analyze on full extent at beginning, in addition, I’m going to buffer cameras and draw circles of its visual distance, it will be hard to
+          recognize because distribution of cameras is uneven. As a result, to begin with, I narrowed the scale to downtown, which is one of the most representative high camera density area with the highest part 1 crime rate (291 in 1000 residents)
+          in Baltimore.
+
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+        <p class="label super-font">Crime Rates in Baltimore</p>
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis3.png" alt="keyphrase">
+        <p class="note sub-font">
+
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+        <p class="label super-font">Types of Crime</p>
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis4.png" alt="keyphrase">
+        <p class="note sub-font">
+
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">What is the Area being surveilled?</p>
+        <p class="body-text sub-font">
+          According to Baltimore CCTV, the visual distance of surveillance cameras is 256 ft, assume the vision is not obscured, thus I use buffer to create circles that within the vision of cameras. in Baltimore.
+          <ul class="body-text sub-font">
+            <li>I selected the Downtown/ Seton Hill and clipped it from the whole city’s map</li>
+            <li>Then I clipped cameras and crimes with Downtown layer to show only the cameras in downtown</li>
+            <li>I buffered those cameras with linear distance of 256 ft</li>
+          </ul>
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis5.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">All Crimes Happened in this Area</p>
+        <p class="body-text sub-font">
+          In order to have clearer view of the map, I simplified the various symbols of crimes to same red dots. There are total of 144 crimes happened in Downtown, 43 of them are not surveilled by cameras (out of buffer circles).
+
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis6.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">Analysis</p>
+        <p class="body-text sub-font">
+          As I want to know how large the areas that are being watched by cameras, and how many crimes are within them
+          <ul class="body-text sub-font">
+            <li>I dissolved those overlapped buffer circles to calculate areas that covered by cameras’ vision</li>
+            <li>Open the table, selected the column of Shape Area and recorded the sum number: 13471122 square feet = 0.4832 square mile</li>
+
+          </ul>
+          <p class="body-text sub-font">
+            Briefly in conclusion, in 0.7438 square miles area of downtown/Seton Hill, cameras are surveilling 0.4832 square mile which counts 64 percent, 70.1 percent of crimes fell into camera’s vision. It seems that surveillance cameras do not
+            deter criminals a lot.
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis7.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">The Whole Baltimore City</p>
+        <p class="body-text sub-font">
+          A single area can be representative, but we still need to see if the conclusion can be draw to the whole city. Let’s take an overview of Baltimore city again, I find that in 27 out of 55 districts of Baltimore where surveillance camera
+          system has been implemented, Cameras’ vision covers 28 percent of the whole area which is 28.02 square mile, and 455 crimes which counts 61 percent of Part 1 crimes happened within are supposed to be recorded. Generally, the distribution
+          of surveillance cameras in Baltimore is efficient in surveilling crimes. However, when considering this in another way, in Baltimore, where surveillance cameras are installed, crime rates are even higher than elsewhere. Which is quite
+          contradictory to what police department has been claimed.
+
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis8.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis9.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+      </div>
+    </div>
+    <!-- end of one size B image -->
+
+    <div class="row justify-content-center">
+      <!-- headline and intro -->
+      <div class="col-lg-10 ">
+        <p class="subhead super-font">Is it necessary to implement more surveillance cameras?</p>
+
+
+      </div>
+    </div>
+    <!-- start of one size B image -->
+    <div class="row justify-content-center">
+      <!-- labels/deszcriptions and three charts for mobile -->
+      <div class="col-md-10">
+        <!-- left -->
+
+        <!-- <p class="label-text super-font">Patent quantity surged along with aggresive acquisition and rapid growth</p> -->
+        <img class="image" src="images/gis10.png" alt="keyphrase">
+        <p class="note sub-font">
+        </p>
+        <p class="body-text sub-font">In 28 Districts where no surveillance camera is installed. According from tables of the content, there are 534 crimes happened in 64.26 square mile area which is peripheral in Baltimore. Compare with 746 crimes
+          happened in 28.02 square mile area where cameras are implemented, this low density may have less priority in considering further implementation. Though crime density is generally low, but the distribution is uneven, as visualized by the
+          map, some areas has even the closed crime rates as in central of the city.
+          <p class="body-text sub-font">For example
+            <ul class="body-text sub-font">
+              <li>In northern area of Highlandtown</li>
+              <li>In northern area of Washington Village/Pigtown</li>
+              <li>In Dorchester/Ashburton & Forest Park/Walbrook</li>
+              <li>In Northeastern area of Southeastern</li>
+              <li>In Allendale/Irvington</li>
+            </ul>
+            <p class="body-text sub-font">I recommend local government to implement surverillance camera systems.
+              <img class="image" src="images/gis11.png" alt="keyphrase">
+
+            </div>
+      </div>
+      <!-- end of one size B image -->
+
+      <div class="row justify-content-center">
+        <!-- headline and intro -->
+        <div class="col-lg-10 ">
+          <p class="subhead super-font">Conclusion</p>
+          <p class="body-text sub-font">
+            To summarize, in districts that cameras are implemented, the allocation is generally efficient to surveil crimes as much as possible. In peripheral areas where no camera is installed probably due to the low density of crimes, however, I
+            suggest that some blocks with high crime rates need to be implemented with surveillance cameras. Contrarily, if what Baltimore’s police department said is true, crime rates should be lower in places with cameras, but as we see, it is
+            even higher than other places. Because some limitations, this conclusion may need future research on data collecting to make comparison between before and after the implementation of Citiwatch Program.
+
+        </div>
+      </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+
+</html>
